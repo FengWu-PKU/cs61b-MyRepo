@@ -79,8 +79,10 @@ public class MyHashMap<K, V> implements Map61B<K, V> {
             resize(size*2);
         }
         int hashCode=hash(key);
+        size-=buckets[hashCode].size;
         buckets[hashCode].put(key,value);
-        size++;
+        size+=buckets[hashCode].size;
+        // the weird way is correct when "put" a exiting key just changing its value.
     }
 
     /* Returns the number of key-value mappings in this map. */
