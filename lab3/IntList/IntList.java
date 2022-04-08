@@ -94,6 +94,21 @@ public class IntList {
         return null;
     }
 
+    private static IntList reverseHelper(IntList remain,IntList cur) {
+        if(remain==null) {
+            return cur;
+        }
+        IntList tmp=new IntList(remain.first,cur);
+        cur=tmp;
+        return reverseHelper(remain.rest,cur);
+    }
+
+    public static IntList reverse(IntList A){
+        IntList reversed=reverseHelper(A,null);
+        /** Just for destructive. */
+        return reversed;
+    }
+
 
 
 

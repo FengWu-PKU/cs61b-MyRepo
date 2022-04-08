@@ -23,12 +23,12 @@ public class WorldParts {
     public static void turnUpHallWay(Position p, int strightLen,int upLen,TETile t) {  // 2
 
     }
-    /**  #### ###
+    /**  #### !###
      *   #      #
      *   #      #
      *   ########
      */
-    public static void room(Position p,int width,int hight,TETile t) {  // 3
+    public static void room(Position p,int width,int part1Hight,int part2Height,TETile t) {  // 3
 
     }
 }
