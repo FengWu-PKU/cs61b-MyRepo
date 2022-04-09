@@ -23,7 +23,7 @@ public class Percolation {
         for(int j=0;j<len;j++) {
             int code1=xyTo1D(0,j);
             uf.union(head,code1);  // union the top level with head
-            int code2=xyTo1D(len-1.j);
+            int code2=xyTo1D(len-1,j);
             uf.union(code2,tail);  // union the bottom level with tail
         }
     }
