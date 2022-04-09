@@ -1,5 +1,7 @@
 package hw3.hash;
 import java.awt.Color;
+
+import com.sun.rowset.internal.SyncResolverImpl;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdDraw;
 
@@ -14,8 +16,11 @@ public class SimpleOomage implements Oomage {
 
     @Override
     public boolean equals(Object o) {
-        // TODO: Write this method.
-        return false;
+        if(o==this) return true;
+        if(o==null) return false;
+        if(o.getClass()!=this.getClass()) return false;
+        SimpleOomage that=(SimpleOomage) o;
+        return (this.blue==that.blue && this.red==that.red && this.green==that.green);
     }
 
     /* Uncomment this method after you've written
@@ -48,6 +53,7 @@ public class SimpleOomage implements Oomage {
         StdDraw.setPenColor(new Color(red, green, blue));
         StdDraw.filledSquare(x, y, WIDTH * scalingFactor);
     }
+
 
     public static SimpleOomage randomSimpleOomage() {
         int red = StdRandom.uniform(0, 51) * 5;
