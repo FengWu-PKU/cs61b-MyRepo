@@ -22,7 +22,7 @@ public class Solver {
                 return;
             }
             for(WorldState i:cur.ws.neighbors()) {
-                if(!i.equals(cur.ws)) {
+                if(!i.equals(cur.ws)&&(cur.parent==null||(!i.equals(cur.parent.ws)))) {  // no enqueued WorldState is its parent and grandparent.
                     pq.insert(new SearchNode(i,cur.steps+1,cur));
                 }
             }
